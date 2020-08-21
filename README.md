@@ -22,3 +22,12 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+# ssr 暂时需要的包 -D
+
+vue-server-renderer
+epxress
+webpack-node-externals 
+lodash.merge
+cross-env
