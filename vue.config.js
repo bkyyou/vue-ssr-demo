@@ -4,6 +4,8 @@ const VueSSRClientPlugin = require("vue-server-renderer/client-plugin");
 const nodeExternals = require("webpack-node-externals");
 const merge = require("lodash.merge");
 
+console.log('vue-config.js')
+
 // 环境变量：决定入口是客户端还是服务端
 const TARGET_NODE = process.env.WEBPACK_TARGET === "node";
 const target = TARGET_NODE ? "server" : "client";
@@ -35,8 +37,16 @@ module.exports = {
           whitelist: [/\.css$/]
         })
       : undefined,
+      // {
+      //   jquery: '$',
+      //   vue: 'Vue',
+      //   vuex: 'Vuex',
+      //   axios: 'axios',
+      //   'element-ui': 'ELEMENT'
+      // }
     optimization: {
-      splitChunks: undefined
+      // splitChunks: undefined
+      splitChunks: false
     },
     // 这是将服务器的整个输出构建为单个 JSON 文件的插件。
     // 服务端默认文件名为 `vue-ssr-server-bundle.json`

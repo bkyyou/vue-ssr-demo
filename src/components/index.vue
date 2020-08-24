@@ -5,6 +5,7 @@
 </template>
 
 <script>
+
 export default {
  name: 'index',
  data() {
@@ -15,8 +16,11 @@ export default {
  componetns: {
 
  },
+ created() {
+   console.log('created');
+ },
  mounted() {
-
+   console.log('mounted');
  },
  methods: {
 
