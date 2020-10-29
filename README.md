@@ -36,3 +36,12 @@ cross-env
 
 # store
 中小型项目 数据量少可以写在 cookies 中
+
+# ssr 启动方式
+
+npm run build 
+主要为了生成 两个 json 文件
+
+在终端中打开 server 文件
+node index2.js  启动服务
+
