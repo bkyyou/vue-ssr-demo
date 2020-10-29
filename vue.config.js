@@ -23,7 +23,7 @@ module.exports = {
     // 这允许 webpack 以 Node 适用方式处理动态导入(dynamic import)，
     // 并且还会在编译 Vue 组件时告知 `vue-loader` 输送面向服务器代码(server-oriented code)。
     target: TARGET_NODE ? "node" : "web",
-    node: TARGET_NODE ? undefined : false,
+    node: TARGET_NODE ? undefined : false, 
     output: {
       // 此处告知 server bundle 使用 Node 风格导出模块
       libraryTarget: TARGET_NODE ? "commonjs2" : undefined
@@ -46,7 +46,11 @@ module.exports = {
       // }
     optimization: {
       // splitChunks: undefined
-      splitChunks: false
+      /**
+       * undefined 报错
+       * Server-side bundle should have one single entry file. Avoid using CommonsChunkPlugin in the server config. vuessr
+       */
+      splitChunks: false // 服务端是 undefined 没用，必须写成 false
     },
     // 这是将服务器的整个输出构建为单个 JSON 文件的插件。
     // 服务端默认文件名为 `vue-ssr-server-bundle.json`
